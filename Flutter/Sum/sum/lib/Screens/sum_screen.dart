@@ -16,7 +16,7 @@ class _SumScreenState extends State<SumScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Sum App"),
+        title: const Text("Sum App"),
         centerTitle: true,
       ),
       body: Container(
@@ -36,9 +36,9 @@ class _SumScreenState extends State<SumScreen> {
                 child: TextField(
                   textAlign: TextAlign.center,
                   keyboardType: TextInputType.number,
-                  decoration: InputDecoration(
-                     fillColor: Colors.white,
-                     labelText: 'First Value',
+                  decoration: const InputDecoration(
+                    fillColor: Colors.white,
+                    labelText: 'First Value',
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(),
                     ),
@@ -47,13 +47,13 @@ class _SumScreenState extends State<SumScreen> {
                     ),
                   ),
                   controller: firstValueEditingController,
-                  
                   onChanged: (String texto) {
+                    // ignore: avoid_print
                     print("Valor digitado:" + texto);
                   },
                 ),
               ),
-              Text(
+              const Text(
                 "+",
                 style: TextStyle(fontSize: 30, color: Colors.deepPurple),
               ),
@@ -62,8 +62,8 @@ class _SumScreenState extends State<SumScreen> {
                 child: TextField(
                   textAlign: TextAlign.center,
                   keyboardType: TextInputType.number,
-                  decoration: InputDecoration(
-                     labelText: 'Second Value',
+                  decoration: const InputDecoration(
+                    labelText: 'Second Value',
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(),
                     ),
@@ -73,19 +73,18 @@ class _SumScreenState extends State<SumScreen> {
                   ),
                   controller: secondValueEditingController,
                   onChanged: (String texto) {
+                    // ignore: avoid_print
                     print("Valor digitado:" + texto);
                   },
                 ),
               ),
-              Text(
+              const Text(
                 "=",
                 style: TextStyle(fontSize: 30, color: Colors.deepPurple),
               ),
               Padding(
-                padding: EdgeInsets.all(20),
-                child: Container(
-                  child: Text(resultSum.toString()),
-                ),
+                padding: const EdgeInsets.all(20),
+                child: Text(resultSum.toString()),
               ),
               ElevatedButton(
                 onPressed: () {
@@ -93,7 +92,7 @@ class _SumScreenState extends State<SumScreen> {
                     resultSum = int.parse(firstValueEditingController.text) + int.parse(secondValueEditingController.text);
                   });
                 },
-                child: Text(
+                child: const Text(
                   "Sum",
                   style: TextStyle(fontSize: 30),
                 ),
